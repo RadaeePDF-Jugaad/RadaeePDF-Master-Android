@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/action_confirm"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:src="@drawable/ic_done"
+        android:layout_weight="1"
+        android:onClick="action_confirm"
+        android:title="@string/text_confirm_label"/>
+    <ImageView
+        android:id="@+id/action_cancel"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:src="@drawable/ic_cancel"
+        android:layout_weight="1"
+        android:onClick="action_cancel"
+        android:title="@string/button_cancel_label"/>
+</LinearLayout>

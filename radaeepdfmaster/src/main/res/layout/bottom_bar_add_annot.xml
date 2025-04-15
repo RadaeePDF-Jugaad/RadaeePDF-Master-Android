@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_annot_text_box"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_text_box"
+        android:src="@drawable/ic_annot_rect_text"/>
+
+    <ImageView
+        android:id="@+id/image_annot_note"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_note"
+        android:src="@drawable/ic_annot_note"/>
+
+    <ImageView
+        android:id="@+id/image_annot_ellipse"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_ellipse"
+        android:src="@drawable/ic_annot_ellipse"/>
+
+    <ImageView
+        android:id="@+id/image_annot_rect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_rect"
+        android:src="@drawable/ic_annot_rect"/>
+
+    <ImageView
+        android:id="@+id/image_annot_line"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_line"
+        android:src="@drawable/ic_annot_line"/>
+
+    <ImageView
+        android:id="@+id/image_annot_ink"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_ink"
+        android:src="@drawable/ic_annot_ink"/>
+
+    <ImageView
+        android:id="@+id/image_annot_polyline"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_polyline"
+        android:src="@drawable/ic_annot_polyline"/>
+
+    <ImageView
+        android:id="@+id/image_annot_polygon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:onClick="image_annot_polygon"
+        android:src="@drawable/ic_annot_polygon"/>
+</LinearLayout>

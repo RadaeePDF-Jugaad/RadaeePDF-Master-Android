@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/item_edit_page"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_weight="1"
+        android:onClick="item_edit_page"
+        android:src="@drawable/ic_edit_page"/>
+
+    <ImageView
+        android:id="@+id/item_edit_text"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_weight="1"
+        android:onClick="item_edit_text"
+        android:src="@drawable/ic_edit_text"/>
+</LinearLayout>

@@ -1,0 +1,103 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PDFReaderAct">
+    <item
+        android:id="@+id/action_undo"
+        android:icon="@drawable/ic_undo_disabled"
+        android:title="@string/text_undo_str"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_redo"
+        android:icon="@drawable/ic_redo_disabled"
+        android:title="@string/text_redo_str"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_view_mode"
+        android:icon="@drawable/ic_view_mode"
+        android:orderInCategory="100"
+        android:title="@string/text_view_mode_label"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_view_vert"
+                android:icon="@drawable/ic_view_vert"
+                android:title="@string/text_view_vert_label" />
+            <item
+                android:id="@+id/action_view_horz"
+                android:icon="@drawable/ic_view_horz"
+                android:title="@string/text_view_horz_label" />
+            <item
+                android:id="@+id/action_view_page"
+                android:icon="@drawable/ic_view_single"
+                android:title="@string/text_view_single_label" />
+            <item
+                android:id="@+id/action_view_dual"
+                android:icon="@drawable/ic_view_double_page"
+                android:title="@string/text_view_dual_label" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/ic_menu"
+        android:orderInCategory="100"
+        android:title="@string/text_action_menu_label"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="100"
+        android:title="@string/text_action_search_label"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_meta"
+        android:icon="@drawable/ic_meta"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="100"
+        android:title="@string/text_meta_label" />
+
+    <item
+        android:id="@+id/action_attachment"
+        android:icon="@drawable/ic_attachment"
+        android:orderInCategory="100"
+        android:title="@string/text_action_attachment_label"
+        app:showAsAction="ifRoom" />
+
+    <!--<item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:orderInCategory="100"
+        android:title="@string/text_action_settings_label"
+        app:showAsAction="ifRoom" />-->
+
+    <item
+        android:id="@+id/action_book_mark"
+        android:icon="@drawable/ic_bookmark"
+        android:orderInCategory="100"
+        android:title="@string/text_book_mark_list_label"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:orderInCategory="100"
+        android:title="@string/text_action_share_label"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_help"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="100"
+        android:title="@string/text_help_label" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="100"
+        android:title="@string/text_action_about_label"
+        app:showAsAction="ifRoom" />
+</menu>

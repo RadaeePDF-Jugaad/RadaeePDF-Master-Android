@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/layout_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/btn_recent_file"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_recent_file" />
+
+        <ImageView
+            android:id="@+id/btn_brows_file"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_browse_file" />
+
+        <ImageView
+            android:id="@+id/btn_dropbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_dropbox" />
+
+        <ImageView
+            android:id="@+id/btn_pdf_tool"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_pdf_tool" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_seprator"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/btn_disabled_color"
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/layout_navigation" />
+
+    <LinearLayout
+        android:id="@+id/layout_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/layout_seprator" />
+</RelativeLayout>

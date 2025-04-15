@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.radaee.reader.PDFEditLayoutView
+        android:id="@+id/pdf_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"></com.radaee.reader.PDFEditLayoutView>
+
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDFFFFFF"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/edit_search_input"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <ImageView
+            android:id="@+id/search_prev"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/btn_left"
+            app:tint="@color/actionBarTextColor" />
+
+        <ImageView
+            android:id="@+id/search_next"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/btn_right"
+            app:tint="@color/actionBarTextColor" />
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_search" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/ic_bookmark"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_annot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/ic_add_annot_fab"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/ic_add_fab"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/item_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/ic_edit_text_fab"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="128dp"
+        android:src="@drawable/ic_edit_fab"
+        android:tooltipText=""
+        app:fabSize="mini" />
+
+    <com.radaee.util.PDFThumbView
+        android:id="@+id/thumbs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp" />
+
+    <LinearLayout
+        android:id="@+id/bottom_control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_action_bar_bg"
+        android:gravity="center_horizontal"
+        android:fitsSystemWindows="true"
+        android:visibility="gone">
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/text_select_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#99AAAAAA"
+        android:padding="5dp"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/icon_copy"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_copy"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/icon_highlight"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_highlight"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/icon_underline"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_underline"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/icon_strikeout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_strikeout"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/icon_squiggly"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_squiggly"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/icon_eraser"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_eraser"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B5000000"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_help"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_help_1" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/actionButtonBG"
+        android:layout_alignParentBottom="true"
+        android:text="@string/text_next_label" />
+</RelativeLayout>

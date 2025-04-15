@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_attachment_label">附件</string>
+    <string name="text_back_label">返回</string>
+    <string name="copy_text_to_clipboard">複製</string>
+    <string name="highlight_texts">高亮文字</string>
+    <string name="underline">下劃線</string>
+    <string name="strikeout">刪除線</string>
+    <string name="squiggly">波浪線</string>
+    <string name="eraser">刪除（不可撤銷）</string>
+    <string name="hint_cannot_open_attachment_label">無法打開附件，不支持的附件類型</string>
+    <string name="text_title_label">標題：</string>
+    <string name="text_author_label">作者：</string>
+    <string name="text_subject_label">主題：</string>
+    <string name="text_key_word_label">關鍵字：</string>
+    <string name="text_creator_label">創建者：</string>
+    <string name="text_producer_label">生產者：</string>
+    <string name="no_bookmarks">沒有書籤數據</string>
+
+    <string name="text_select_attachment_label">請選擇附件</string>
+    <string name="text_sign_hand_writting_label">手寫：</string>
+    <string name="text_password_label">密碼：</string>
+    <string name="text_cert_file_label">證書：</string>
+    <string name="text_browse_label">瀏覽</string>
+    <string name="text_select_cert_file_label">請選擇證書</string>
+    <string name="text_confirm_label">確認</string>
+    <string name="text_cancel_label">取消</string>
+    <string name="text_close_label">關閉</string>
+    <string name="text_cert_faile_label">簽名失敗，無法打開證書。 </string>
+    <string name="text_sign_error_label">簽名失敗。 </string>
+    <string name="text_issue_label">發行者：</string>
+    <string name="text_cert_subject_label">主題：</string>
+    <string name="text_version_label">版本：</string>
+    <string name="text_verify_label">驗證：</string>
+    <string name="text_annotation_property_label">註解屬性</string>
+    <string name="text_verify_ok_label">驗證：通過</string>
+    <string name="text_verify_changed_label">驗證：已被編輯</string>
+    <string name="text_sign_the_field_label">簽名區</string>
+
+    <string name="text_reason_label">原因：</string>
+    <string name="text_location_label">位置：</string>
+    <string name="text_contact_label">聯繫人：</string>
+    <string name="text_sign_time_label">簽名時間：</string>
+    <string name="no_search_results">未找到關鍵字（%1$s）</string>
+
+    <string name="text_copy_hint">以下文本已復製到剪貼板：</string>
+    <string name="text_add_annot_failed_hint">無法添加註解！ </string>
+</resources>
