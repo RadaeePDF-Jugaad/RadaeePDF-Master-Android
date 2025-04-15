@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Radaee PDF Master</string>
+    <string name="txt_recent_file">最近打開</string>
+    <string name="txt_recent_file_empty">沒有最近打開的文檔記錄，請用左邊的瀏覽按鈕瀏覽並打開文檔</string>
+    <string name="message_open_err_password">打開失敗：密碼錯誤</string>
+    <string name="message_open_err_encryption">打開失敗：未知加密</string>
+    <string name="message_open_err_file">打開失敗：損壞或非法的%1$s文件</string>
+    <string name="message_open_err_path">打開失敗：無權限或路徑錯誤</string>
+    <string name="message_open_err_unknown">打開失敗：未知錯誤</string>
+    <string name="text_undo_str">撤銷</string>
+    <string name="text_redo_str">恢復</string>
+    <string name="text_view_mode_label">視圖模式</string>
+    <string name="text_view_vert_label">垂直視圖</string>
+    <string name="text_view_horz_label">水平視圖</string>
+    <!--<string name="text_view_reflow_label">Text Reflow</string>-->
+    <string name="text_view_single_label">單頁視圖</string>
+    <string name="text_view_dual_label">雙頁視圖</string>
+    <string name="text_action_search_label">查找文字</string>
+    <string name="text_convert_pdf_label">另存為PDF</string>
+    <string name="text_action_settings_label">設置</string>
+    <string name="text_book_mark_list_label">書籤列表</string>
+    <string name="text_action_share_label">共享</string>
+    <string name="text_action_about_label">關於Radaee PDF Master</string>
+    <string name="text_action_menu_label">目錄</string>
+    <string name="text_action_attachment_label">附件</string>
+    <string name="text_search_prev_label">向前搜索</string>
+    <string name="text_confirm_label">確認</string>
+    <!--<string name="text_cancel_label">取消</string>-->
+    <string name="notification_label">注意</string>
+    <string name="notification_save_label">文檔已修改，是否保存？ </string>
+
+    <string name="button_positive_label">是</string>
+    <string name="button_negative_label">否</string>
+    <string name="button_cancel_label">取消</string>
+    <string name="message_wait_label">請稍等</string>
+    <string name="message_loading_label">正在讀取文件%1$s…</string>
+    <string name="message_add_bookmark_success_label">已成功添加書籤</string>
+    <string name="message_bookmark_exist_label">書籤已存在</string>
+    <string name="message_bookmark_error_label">很抱歉，添加書籤失敗。 </string>
+    <string name="button_ok_label">OK</string>
+    <string name="text_bookmark_label">第%1$s頁</string>
+
+    <string name="text_copy_hint">以下文本已復製到剪貼板：</string>
+    <string name="text_write_failed_hint">已加密或寫入失敗！ </string>
+    <string name="text_add_annot_failed_hint">無法添加註解！ </string>
+    <string name="message_selected_text_title">操作已選擇的文本</string>
+    <string name="text_convert_pdf_success_hint">文檔已另存為“%1$s”</string>
+    <string name="text_convert_pdf_error_hint">無法將當前文檔轉換為PDF</string>
+
+    <string name="text_meta_label">文檔信息</string>
+    <!--<string name="text_meta_title_label">PDF Meta data</string>-->
+    <string name="text_help_label">幫助</string>
+    <string name="text_next_label">下一步</string>
+    <string name="text_done_label">完成</string>
+    <!--<string name="text_match_whole_word_label">Match whole word</string>
+    <string name="text_match_case_label">Match case</string>-->
+    <string name="hint_not_support">尚不支持，敬請期待。 </string>
+    <string name="message_url_jump_label">你點擊了一個外部鏈接，是否跳轉到：%1$s</string>
+    <string name="message_cannot_open_document_label">打開外部文檔失敗</string>
+
+    <string name="text_open_document_hint_label">由於Android Q隱私策略升級，我們已經無法訪問最近文檔，請通過左側的文檔按鈕選擇要打開的文檔</string>
+    <string name="text_cannot_get_token_hint">授權失敗，請重新授權。</string>
+    <string name="text_token_expired_hint">授權過期，請重新授權。</string>
+    <string name="text_downloading_hint">下載中</string>
+    <string name="text_download_error_label">下載出錯</string>
+    <string name="text_loading_label">讀取中</string>
+    <string name="text_storage_permission_label">需要存儲權限才能進行下載/上傳操作</string>
+    <string name="text_refresh_label">刷新</string>
+    <string name="upload_to_dropbox_label">這是一個Dropbox文檔，你想要上傳到Dropbox並同步嗎？</string>
+    <string name="merge_pdf_label">合并PDF</string>
+    <string name="dest_file_label">文件 1</string>
+    <string name="source_file_label">文件 2</string>
+    <string name="convert_pdf_label">DOCX 轉 PDF</string>
+    <string name="text_merge_hint_label">文件2將被合并入文件1</string>
+    <string name="encrypt_pdf_label">用密碼加密PDF</string>
+    <string name="decrypt_pdf_label">去除PDF密碼</string>
+    <string name="not_encrypted_pdf_hint">PDF未加密</string>
+    <string name="encrypt_failed_hint">PDF加密失敗</string>
+    <string name="encrypt_success_hint">加密文件：“%1$s”已生成。</string>
+    <string name="decrypt_success_hint">未加密文件：“%1$s”已生成。</string>
+
+    <string name="compress_pdf_label">壓縮PDF</string>
+    <string name="compress_success_hint">壓縮完成，文件：“%1$s”已生成</string>
+    <string name="compress_failed_hint">壓縮PDF文檔失敗</string>
+
+    <string name="convert_pdfa_label">PDF轉PDF/A</string>
+    <string name="convert_success_hint">PDF/A文檔：“%1$s”已生成</string>
+    <string name="convert_failed_hint">PDF/A文檔轉換失敗</string>
+    <string name="permission_dialog_title">需要權限</string>
+    <string name="permission_dialog_content">因為安卓11的隱私管理升級，我們需要升級存儲訪問權限來瀏覽文檔，請點擊OK按鈕進行授權。 </string>
+    <string name="permission_denied_content">很抱歉，因為缺少授權，部分功能可能無法正常使用。 </string>
+
+    <string name="copy_url">複製URL到剪貼簿</string>
+    <string name="success_copy_url">URL已複製到剪貼簿</string>
+</resources>
