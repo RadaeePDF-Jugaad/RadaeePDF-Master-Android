@@ -301,7 +301,7 @@ Visit [https://www.radaeepdf.com/](https://www.radaeepdf.com/) for detailed lice
 
 For complete API documentation and advanced features, visit:
 - [RadaeePDF Support Portal](https://support.radaeepdf.com/)
-- [Wiki](https://github.com/RadaeePDF-Jugaad/RadaeePDF-Classic-Android/wiki)
+- [Wiki](https://github.com/RadaeePDF-Jugaad/RadaeePDF-Master-Android/wiki)
 
 ## Support
 
