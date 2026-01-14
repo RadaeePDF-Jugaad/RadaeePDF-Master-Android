@@ -25,13 +25,14 @@ RadaeePDF SDK is designed to solve most developers' needs with regards to PDF re
 To quickly test the RadaeePDF SDK demo:
 
 1. Open Android Studio
-2. Clone the repository:
+2. Click on **Clone Repository** (or File → New → Project from Version Control)
+3. Paste the repository URL:
    ```
-   git clone https://github.com/RadaeePDF-Jugaad/RadaeePDF-Master-Android.git
+   https://github.com/RadaeePDF-Jugaad/RadaeePDF-Master-Android.git
    ```
-3. Open the project in Android Studio (File → Open → select the cloned folder)
-4. Open the `radaeepdfmaster` folder in the project structure
-5. Click the Play button (▶) to run the demo in an emulator or connected device
+4. Click **Clone** and wait for the project to open
+5. Open the `radaeepdfmaster` folder in the project structure
+6. Click the Play button (▶) to run the demo in an emulator or connected device
 
 ## Installation
 
