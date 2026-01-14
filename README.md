@@ -31,8 +31,8 @@ To quickly test the RadaeePDF SDK demo:
    https://github.com/RadaeePDF-Jugaad/RadaeePDF-Master-Android.git
    ```
 4. Click **Clone** and wait for the project to open
-5. Open the `radaeepdfmaster` folder in the project structure
-6. Click the Play button (▶) to run the demo in an emulator or connected device
+5. Open the `radaeepdfmaster` folder in the project structure (if needed)
+6. Click the Play/Run button (▶) to run the demo in an emulator or connected device
 
 ## Installation
 
