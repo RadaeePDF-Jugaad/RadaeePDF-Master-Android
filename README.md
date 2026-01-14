@@ -42,7 +42,7 @@ To quickly test the RadaeePDF SDK demo:
    ```
    https://github.com/RadaeePDF-Jugaad/RadaeePDF-Master-Android.git
    ```
-2. Add the project ViewLab to your project
+2. Add the project ViewLib to your project
 3. Update your `build.gradle` to include the library
 
 ```gradle
