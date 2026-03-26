@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class Global {
     //bind to app ID "com.radaee.pdfmaster", can avtive version before "20240918".
     //the version string can be retrieved by Global.getVersion().
-    public static String mKey = "D268E89FD130A4172A2F2324F92E882986B1D503FA3FECD9C9F73E0BB7D51D0A91E7839C232063F79992B6749B96246E";
+    public static String mKey = "B3E25636E3C1FDD6B019F042F14A0AEE227342C0B5348BD56BC87F546D775A91801EDF9EA099AD9CAD4D83A53F4D0FFC";
 
     public static boolean Init(Context ctx) {
         //second para is license type

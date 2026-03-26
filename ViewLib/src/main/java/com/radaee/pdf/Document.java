@@ -1239,14 +1239,7 @@ public class Document
 	/**
 	 * get label of page
 	 * @param pageno 0 based page index number
-	 * @return json string or pure text. for json: name is style name of number.<br/>
-	 * for example:<br/>
-	 * {"D":2} is "2"<br/>
-	 * {"R":3} is "III"<br/>
-	 * {"r":4} is "iv"<br/>
-	 * {"A":5} is "E"<br/>
-	 * {"a":6} is "f"<br/>
-	 * for pure text: the text is the label.
+	 * @return page label, null if handle value is 0, or related document object is null;
 	 */
 	public String GetPageLabel(int pageno)
 	{

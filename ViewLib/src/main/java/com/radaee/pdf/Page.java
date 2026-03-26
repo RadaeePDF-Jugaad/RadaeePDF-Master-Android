@@ -17,6 +17,10 @@ class for PDF Page.
 */
 public class Page
 {
+	static public abstract class AnnotCallback
+	{
+		public abstract long OnAnnotRendering(long hand);
+	}
 	public static class Annotation
 	{
 		protected long hand;
@@ -342,7 +346,7 @@ public class Page
 		}
 		public Annotation GetReply(int idx)
 		{
-			long rhand = Page.getAnnotReply(page.hand, hand, false, idx);
+			long rhand = Page.getAnnotReply(page.hand, hand, idx);
 			return new Annotation(page, rhand);
 		}
         /**
@@ -1556,14 +1560,18 @@ public class Page
 
     static private native float[] getCropBox( long hand );
 	static private native float[] getMediaBox( long hand );
+	static private native float[] getBox(int type, long hand);
+	static private native float[] getContentBox( long hand );
 	static private native void close( long hand );
 	static private native void renderPrepare( long hand, long dib );
 	static private native boolean render( long hand, long dib, long matrix, int quality );
+	static private native boolean render1( long hand, long dib, long matrix, int quality, AnnotCallback callback );
 	static private native int getPGEditorNodeCount(long page);
 	static private native void setPGEditorModified(long page, boolean modified);
 	static private native long getPGEditorNode1(long page, int idx);
 	static private native long getPGEditorNode2(long page, float pdfx, float pdfy);
 	static private native boolean renderWithPGEditor(long page, long dib, long matrix, int quality);
+	static private native boolean renderWithPGEditor1(long page, long dib, long matrix, int quality, AnnotCallback callback);
 	static private native boolean updateWithPGEditor(long page);
 	static private native boolean cancelWithPGEditor(long page);
 	static private native boolean renderToBmp( long hand, Bitmap bitmap, long matrix, int quality );
@@ -1596,6 +1604,7 @@ public class Page
 	static private native String objsGetCharFontName( long hand, int index );
 	static private native int objsGetCharCount( long hand );
 	static private native int objsGetCharIndex( long hand, float[] pt );
+	static private native int objsGetCharIndex2( long hand, float[] pt );
 	static private native int objsGetCharUnicode(long page, int index);
 	static private native int[] objsGetImageInfo(long page, int index);
 	static private native int[] objsGetImageData(long page, int index);
@@ -1623,7 +1632,7 @@ public class Page
     static private native boolean getAnnotPopupOpen(long page, long annot);
     static private native boolean setAnnotPopupOpen(long page, long annot, boolean open);
 	static private native int getAnnotReplyCount(long page, long annot);
-	static private native long getAnnotReply(long page, long annot, boolean open, int idx);
+	static private native long getAnnotReply(long page, long annot, int idx);
 	static private native boolean setAnnotName( long hand, long annot, String name);
 	static private native int getAnnotFieldType( long hand, long annot );
     static private native int getAnnotFieldFlag( long hand, long annot );
@@ -1823,7 +1832,25 @@ public class Page
 	{
 		return getMediaBox( hand );
 	}
-    final public boolean AddAnnot(long ref)
+	/**
+	 * get rotated Box, this method need an any type of license.
+	 * @param type 0: crop box, 1: media box, 2: bleed box, 3: trim box, 4: art box.
+	 * @return float array as [left, top, right, bottom] in PDF coordinate.
+	 */
+	final public float[] GetBox(int type)
+	{
+		return getBox(type, hand);
+	}
+	/**
+	 * get content box of page.
+	 * this method will render whole page, and then scan pixels to get box of page content.
+	 * @return float array as [left, top, right, bottom] in PDF coordinate, or null if failed.
+	 */
+	final public float[] GetContentBox()
+	{
+		return getContentBox( hand );
+	}
+	final public boolean AddAnnot(long ref)
     {
         return addAnnot(hand, ref);
     }
@@ -1899,6 +1926,21 @@ public class Page
         if(dib == null || mat == null) return  false;
         try {
             return render(hand, dib.get_hand(), mat.get_hand(), Global.g_render_quality);
+			/*
+			return render1(hand, dib.hand, mat.hand, Global.g_render_quality, new AnnotCallback() {
+				@Override
+				public long OnAnnotRendering(long hval) {
+					int type = getAnnotType(Page.this.hand, hval);
+					if (type == 2) return 0x100000000L;//do not display link annoataion
+					if (type == 20)
+					{
+						int sta = getAnnotCheckStatus(Page.this.hand, hval);
+						if (sta <= 0) return 0;//fully transparency.
+					}
+					return 0x200000ff;//blue transparency.
+				}
+			});
+			 */
         }
         catch (Exception e)
         {
@@ -1929,6 +1971,21 @@ public class Page
 	public boolean RenderWithPGEditor(DIB dib, Matrix matrix)
 	{
 		return renderWithPGEditor(hand, dib.get_hand(), matrix.get_hand(), Global.g_render_quality);
+		/*
+		return renderWithPGEditor1(hand, dib.get_hand(), matrix.get_hand(), Global.g_render_quality, new AnnotCallback() {
+			@Override
+			public long OnAnnotRendering(long hval) {
+				int type = getAnnotType(Page.this.hand, hval);
+				if (type == 2) return 0x100000000L;//do not display link annoataion
+				if (type == 20)
+				{
+					int sta = getAnnotCheckStatus(Page.this.hand, hval);
+					if (sta <= 0) return 0;//fully transparency.
+				}
+				return 0x200000ff;//blue transparency.
+			}
+		});
+		 */
 	}
 	public boolean UpdateWithPGEditor()
 	{
@@ -2119,6 +2176,10 @@ public class Page
 	public final int ObjsGetCharIndex( float[] pt )
 	{
 		return objsGetCharIndex( hand, pt );
+	}
+	public final int ObjsGetCharIndex2( float[] pt )
+	{
+		return objsGetCharIndex2( hand, pt );
 	}
 
 	/**

@@ -11,12 +11,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -152,15 +150,6 @@ public class DocNavAct extends Activity implements OnItemClickListener {
         LinearLayout layout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.dlg_pswd, null);
         final EditText tpassword = (EditText) layout.findViewById(R.id.txt_password);
         final PDFGridItem gitem = item;
-
-        final CheckBox showPasswordCB = layout.findViewById(com.radaee.viewlib.R.id.chk_show);
-        showPasswordCB.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                tpassword.setTransformationMethod(null);
-            } else {
-                tpassword.setTransformationMethod(new PasswordTransformationMethod());
-            }
-        });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
