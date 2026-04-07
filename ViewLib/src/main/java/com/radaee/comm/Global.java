@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * class for Global setting.
  *
  * @author Radaee
- * @version 1.2.32
+ * @version 1.3.2
  */
 public class Global {
     //bind to app ID "com.radaee.pdfmaster", can avtive version before "20240918".
