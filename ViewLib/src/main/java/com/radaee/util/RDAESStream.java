@@ -84,6 +84,8 @@ public class RDAESStream implements RDStream {
             GCMParameterSpec params = new GCMParameterSpec(128, ivbytes);
             m_enc_cipher = Cipher.getInstance("AES/GCM/PKCS5PADDING");
             m_enc_cipher.init(Cipher.ENCRYPT_MODE, skey, params);
+            m_dec_cipher = Cipher.getInstance("AES/GCM/PKCS5PADDING");
+            m_dec_cipher.init(Cipher.ENCRYPT_MODE, skey, params);
 
             //Old solution
             //byte[] ivbytes = new byte[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
@@ -91,6 +93,8 @@ public class RDAESStream implements RDStream {
             //IvParameterSpec iv = new IvParameterSpec(ivbytes);//need IV in CBC mode
             //m_enc_cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
             //m_enc_cipher.init(Cipher.ENCRYPT_MODE, skey, iv);
+            //m_dec_cipher = Cipher.getInstance("AES/GCM/PKCS5PADDING");
+            //m_dec_cipher.init(Cipher.ENCRYPT_MODE, skey, params);
         } catch (Exception e) {
             Log.e("o error", e.getMessage());
             return false;
