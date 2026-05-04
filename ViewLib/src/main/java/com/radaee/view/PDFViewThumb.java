@@ -166,13 +166,13 @@ public class PDFViewThumb extends PDFView {
             int x = ((m_w - (columnWidth * columns + (m_page_gap * (columns - 1)))) / 2);
 
             int left = x;
-            int top = m_page_gap / 2;
+            float top = m_page_gap / 2;
             m_docw = 0;
             m_doch = 0;
             for (cur = 0; cur < cnt; cur++) {
                 if (m_pages[cur] == null) m_pages[cur] = new PDFVPage(m_doc, cur);
                 PDFVPage vp = m_pages[cur];
-                vp.SetRect(left, top, m_scale);
+                vp.SetRect(left, (int) top, m_scale);
                 if (left + vp.GetWidth() + m_page_gap > columnWidth * columns + x) {
                     top += vp.GetHeight() + m_page_gap;
                     left = x;
@@ -501,9 +501,9 @@ public class PDFViewThumb extends PDFView {
         if (m_pages == null) return;
         m_sel_paint.setColor(Global.g_sel_color);
         int left = m_scroller.getCurrX();
-        int top = m_scroller.getCurrY();
+        float top = m_scroller.getCurrY();
         int left1 = left;
-        int top1 = top;
+        float top1 = top;
         if (left1 > m_docw - m_w) left1 = m_docw - m_w;
         if (left1 < 0) left1 = 0;
         if (top1 > m_doch - m_h) top1 = m_doch - m_h;
@@ -513,7 +513,7 @@ public class PDFViewThumb extends PDFView {
             left = left1;
         }
         if (top1 != top) {
-            m_scroller.setFinalY(top1);
+            m_scroller.setFinalY((int) top1);
             top = top1;
         }
         vFlushRange();
@@ -525,7 +525,7 @@ public class PDFViewThumb extends PDFView {
         while (cur < end) {
             PDFVPage vpage = m_pages[cur];
             m_thread.start_render_thumb(vpage);
-            vpage.Draw(m_draw_bmp, left, top);
+            vpage.Draw(m_draw_bmp, left, (int) top);
             cur++;
         }
         if (Global.g_dark_mode) {
@@ -539,7 +539,7 @@ public class PDFViewThumb extends PDFView {
         left = vp.GetVX(m_scroller.getCurrX());
         top = vp.GetVY(m_scroller.getCurrY());
         int right = left + vp.GetWidth();
-        int bottom = top + vp.GetHeight();
+        float bottom = top + vp.GetHeight();
         canvas.drawRect(left, top, right, bottom, m_sel_paint);
         if (m_listener != null) {
             cur = m_prange_start;
