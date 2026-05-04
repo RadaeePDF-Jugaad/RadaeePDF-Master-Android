@@ -1,11 +1,15 @@
 package com.radaee.util;
 
+import android.os.Build;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.radaee.comm.RDStream;
 
 import java.io.File;
 import java.io.RandomAccessFile;
+import java.security.SecureRandom;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -37,6 +41,7 @@ public class RDAESStream implements RDStream {
      * @param key  16 bytes array for key.
      * @return true or false.
      */
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean open(String path, byte[] key) {
         File file = new File(path);
         try {
@@ -68,7 +73,16 @@ public class RDAESStream implements RDStream {
         }
         try {
             SecretKeySpec skey = new SecretKeySpec(key, "AES");
-            byte[] ivbytes = new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+            //The byte array used as vector for generating IvParameterSpec is updated with random value instead of hard coded value for better security performance.
+            //This update may affect on users who were using the hard coded vector. If any issue was found, please feel free to restore the old solution below. --Alex
+            byte[] ivbytes = new byte[16];
+            SecureRandom random = SecureRandom.getInstanceStrong();
+            random.nextBytes(ivbytes);
+
+            //Old solution
+            //byte[] ivbytes = new byte[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+
             IvParameterSpec iv = new IvParameterSpec(ivbytes);//need IV in CBC mode
 
             m_dec_cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");

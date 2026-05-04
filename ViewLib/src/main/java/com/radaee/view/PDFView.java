@@ -28,7 +28,7 @@ public class PDFView
     protected int m_w;
     protected int m_h;
     protected int m_docw;
-    protected int m_doch;
+    protected float m_doch;
     protected int m_lock = 0;
     protected Bitmap m_bmp;
     protected PDFVThread m_thread;
@@ -303,9 +303,9 @@ public class PDFView
         if( m_pages == null ) return;
         //long rec_time = System.currentTimeMillis();
         int left = m_scroller.getCurrX();
-        int top = m_scroller.getCurrY();
+        float top = m_scroller.getCurrY();
         int left1 = left;
-        int top1 = top;
+        float top1 = top;
         if( left1 > m_docw - m_w ) left1 = m_docw - m_w;
         if( left1 < 0 ) left1 = 0;
         if( top1 > m_doch - m_h ) top1 = m_doch - m_h;
@@ -317,7 +317,7 @@ public class PDFView
         }
         if( top1 != top )
         {
-            vSetY(top1);
+            vSetY((int) top1);
             top = top1;
         }
         vFlushRange();
@@ -335,14 +335,14 @@ public class PDFView
                 {
                     PDFVPage vpage = m_pages[cur];
                     if( m_status != STA_ZOOM ) m_thread.start_render(vpage);
-                    vpage.Draw(bcan, left, top);
+                    vpage.Draw(bcan, left, (int) top);
                     if( sel_rect1 == null || sel_rect2 == null )
                     {
-                        sel_rect1 = vpage.GetSelRect1(left, top);
-                        sel_rect2 = vpage.GetSelRect2(left, top);
+                        sel_rect1 = vpage.GetSelRect1(left, (int) top);
+                        sel_rect2 = vpage.GetSelRect2(left, (int) top);
                     }
                     if( m_finder.find_get_page() == cur )
-                        m_finder.find_draw(bcan, vpage, left, top);
+                        m_finder.find_draw(bcan, vpage, left, (int) top);
                     cur++;
                 }
                 m_draw_bmp.Create(m_bmp);
@@ -361,12 +361,12 @@ public class PDFView
                     if( m_status != STA_ZOOM ) m_thread.start_render(vpage);
                     if( sel_rect1 == null || sel_rect2 == null )
                     {
-                        sel_rect1 = vpage.GetSelRect1(left, top);
-                        sel_rect2 = vpage.GetSelRect2(left, top);
+                        sel_rect1 = vpage.GetSelRect1(left, (int) top);
+                        sel_rect2 = vpage.GetSelRect2(left, (int) top);
                     }
-                    vpage.Draw(canvas, left, top);
+                    vpage.Draw(canvas, left, (int) top);
                     if( m_finder.find_get_page() == cur )
-                        m_finder.find_draw(canvas, vpage, left, top);
+                        m_finder.find_draw(canvas, vpage, left, (int) top);
                     cur++;
                 }
             }
@@ -382,12 +382,12 @@ public class PDFView
                 m_thread.start_render(vpage);
                 if( sel_rect1 == null || sel_rect2 == null )
                 {
-                    sel_rect1 = vpage.GetSelRect1(left, top);
-                    sel_rect2 = vpage.GetSelRect2(left, top);
+                    sel_rect1 = vpage.GetSelRect1(left, (int) top);
+                    sel_rect2 = vpage.GetSelRect2(left, (int) top);
                 }
-                vpage.Draw(m_draw_bmp, left, top);
+                vpage.Draw(m_draw_bmp, left, (int) top);
                 if( m_finder.find_get_page() == cur )
-                    m_finder.find_draw(m_draw_bmp, vpage, left, top);
+                    m_finder.find_draw(m_draw_bmp, vpage, left, (int) top);
                 cur++;
             }
             if( Global.g_dark_mode ) {
@@ -808,7 +808,7 @@ public class PDFView
         if( m_pages == null || m_lock == 3 ) return false;
         int ivx = (int)(-velocityX * Global.fling_dis / 2);
         int ivy = (int)(-velocityY * Global.fling_dis / 2);
-        m_scroller.fling((int)m_scroller.getCurrX(), (int)m_scroller.getCurrY(), ivx, ivy, 0, m_docw - m_w, 0, m_doch - m_h);
+        m_scroller.fling((int)m_scroller.getCurrX(), (int)m_scroller.getCurrY(), ivx, ivy, 0, m_docw - m_w, 0, (int) (m_doch - m_h));
         return true;
     }
     protected void vOnMoveEnd( int x, int y )
@@ -1079,7 +1079,7 @@ public class PDFView
     }
     public final int vGetDocH()
     {
-        return m_doch;
+        return (int) m_doch;
     }
     @Override
     protected void finalize() throws Throwable
@@ -1095,7 +1095,7 @@ public class PDFView
     }
 
     public void vSetY(int y) {
-        if( y > m_doch - m_h ) y = m_doch - m_h;
+        if( y > m_doch - m_h ) y = (int) (m_doch - m_h);
         if( y < 0 ) y = 0;
         m_scroller.setFinalY(y);
     }
