@@ -62,14 +62,15 @@ Before using RadaeePDF, initialize the library with your license key:
 public static String mKey = "[YOUR-LICENSE-KEY]";
 ```
 
-2. Add the following code to your 'Application' class to initialize and activate the library:
+2. Add the following code to your 'Main Activity' class to initialize and activate the library.
+Ensure that Global.Init() is invoked before invoking any other RadaeePDF functions:
 ```java
 import com.radaee.pdf.Global;
 
-public class MyApplication extends Application {
+public class MainActivity extends AppCompatActivity {
     @Override
-    public void onCreate() {
-        super.onCreate();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         
         // Initialize and activate RadaeePDF
         Global.Init(this);
