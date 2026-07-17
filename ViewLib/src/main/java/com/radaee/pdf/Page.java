@@ -136,7 +136,10 @@ public class Page
 		{
 			return Page.getAnnotFieldNameWithoutNO(page.hand, hand);
 		}
-
+		final public String GetFieldBtnLabel()
+		{
+			return Page.getAnnotFieldBtnLabel(page.hand, hand);
+		}
         /**
          * get name of the annotation.<br/>
          * this method require premium license
@@ -1634,6 +1637,7 @@ public class Page
 	static private native int getAnnotReplyCount(long page, long annot);
 	static private native long getAnnotReply(long page, long annot, int idx);
 	static private native boolean setAnnotName( long hand, long annot, String name);
+	static private native String getAnnotFieldBtnLabel( long hand, long annot );
 	static private native int getAnnotFieldType( long hand, long annot );
     static private native int getAnnotFieldFlag( long hand, long annot );
 	static private native String getAnnotFieldName( long hand, long annot );
